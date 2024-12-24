@@ -24,19 +24,12 @@ public class TreasureHuntGame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(800, 600); 
         scoreManager = new ScoreManager();
-        
         cardLayout = new CardLayout();
         setLayout(cardLayout);
-
         menuPanel = new MenuPanel(this);
         add(menuPanel, "Menu");
-
-      
         gamePanel = null;
-        
         setVisible(true);
-       
-
 
     }
 

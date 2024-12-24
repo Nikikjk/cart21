@@ -30,25 +30,25 @@ public class LevelEditor extends JFrame {
     private BufferedImage monster2Image;
     private BufferedImage BossImage;
 
-    private char selectedObject = '.'; // Переменная для хранения выбранного объекта
+    private char selectedObject = '.'; 
 
     public LevelEditor(TreasureHuntGame game) { 
         this.game = game; 
         setTitle("Конструктор уровня");
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setLayout(new BorderLayout()); // Используем BorderLayout для расположения элементов
+        setLayout(new BorderLayout()); 
 
         grid = new char[rows][cols];
         buttons = new JButton[rows][cols];
 
         loadImages(); 
 
-        // Панель для выбора объектов
+        
         JPanel toolPanel = new JPanel();
         toolPanel.setLayout(new FlowLayout());
 
-        // Добавляем кнопки для выбора объектов
+        
         toolPanel.add(createToolButton("Пусто", '.', emptyImage));
         toolPanel.add(createToolButton("Камень", 'X', obstacleImage));
         toolPanel.add(createToolButton("Герой", 'H', heroImage));
@@ -59,9 +59,9 @@ public class LevelEditor extends JFrame {
         toolPanel.add(createToolButton("Сокровище", 'T', treasureImage));
         toolPanel.add(createToolButton("Босс", 'B', BossImage));
 
-        add(toolPanel, BorderLayout.NORTH); // Добавляем панель с инструментами сверху
+        add(toolPanel, BorderLayout.NORTH); 
 
-        JPanel gridPanel = new JPanel(new GridLayout(rows, cols)); // Панель для кнопок уровня
+        JPanel gridPanel = new JPanel(new GridLayout(rows, cols)); 
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 grid[i][j] = '.'; 
@@ -73,9 +73,9 @@ public class LevelEditor extends JFrame {
                 gridPanel.add(buttons[i][j]);
             }
         }
-        add(gridPanel, BorderLayout.CENTER); // Добавляем панель с кнопками в центр
+        add(gridPanel, BorderLayout.CENTER); 
 
-        JPanel controlPanel = new JPanel(); // Панель для управления
+        JPanel controlPanel = new JPanel(); 
         JTextField levelNameField = new JTextField("Введите имя уровня", 20);
         controlPanel.add(levelNameField); 
 
@@ -97,7 +97,7 @@ public class LevelEditor extends JFrame {
         });
         controlPanel.add(backButton); 
 
-        add(controlPanel, BorderLayout.SOUTH); // Добавляем панель управления вниз
+        add(controlPanel, BorderLayout.SOUTH); 
 
         setVisible(true);
     }
@@ -183,7 +183,7 @@ public class LevelEditor extends JFrame {
         if (image != null) {
             button.setIcon(resizeImage(image, 40, 40));
         }
-        button.addActionListener(e -> selectedObject = object); // Устанавливаем выбранный объект
+        button.addActionListener(e -> selectedObject = object); 
         return button;
     }
 
@@ -195,7 +195,7 @@ public class LevelEditor extends JFrame {
             int row = Integer.parseInt(coords[0]);
             int col = Integer.parseInt(coords[1]);
 
-            grid[row][col] = selectedObject; // Устанавливаем выбранный объект на клетку
+            grid[row][col] = selectedObject; 
             updateButtonIcon(row, col); 
         }
     }

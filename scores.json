@@ -1312,5 +1312,23 @@
         "coins": 10,
         "monsters": 0,
         "treasures": 1
+    },
+    {
+        "score": 3,
+        "sword": 0,
+        "elixir": 0,
+        "playerName": "p20241224_192308",
+        "coins": 3,
+        "monsters": 0,
+        "treasures": 0
+    },
+    {
+        "score": 91,
+        "sword": 1,
+        "elixir": 2,
+        "playerName": "p20241224_192415",
+        "coins": 91,
+        "monsters": 5,
+        "treasures": 0
     }
 ]

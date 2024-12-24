@@ -65,15 +65,15 @@ public class Monster implements MovableMonster {
         
         if (Math.abs(heroRow - getRow()) > Math.abs(heroCol - getCol())) { 
             if (heroRow < getRow() ) {
-                deltaRow=-1; // Движение вверх на 2 клетки
+                deltaRow=-1; 
             } else if (heroRow > getRow() ) {
-                deltaRow=+1; // Движение вниз на 2 клетки
+                deltaRow=+1; 
             }
         } else { 
             if (heroCol < getCol() ) {
-                deltaCol=-1; // Движение влево на 2 клетки
+                deltaCol=-1; 
             } else if (heroCol > getCol() ) {
-                deltaCol=+1; // Движение вправо на 2 клетки
+                deltaCol=+1; 
             }
         }
         return moveMonster(deltaRow,deltaCol,grid);

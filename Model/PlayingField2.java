@@ -14,22 +14,19 @@ import javax.swing.JOptionPane;
 import View.*;
 
 public class PlayingField2 {
-    private int moveCount;//количесво ходов
+
     public GameField Field;
     private int coins; // Количество собранных монет
-    private int moves; // Количество сделанных ходов
-    private int level; // Текущий уровень
+
     private boolean sword;// меч 
-    private boolean elecsir;//элескир
+
     private ScoreManager scoreManager;
-    private int moveLimit; // 
+ 
     private int swordCooldown; // 
     private int bossFreezeTurns; // 
     private int difficultyLevel;
     private String player_name;
-    private static final int MAX_MOVE_LIMIT = 30; // 
-    private static final int TARGET_ROW = 10; // 
-    private static final int TARGET_COL = 10; // 
+
 
     public static class Coordinate {
         public int row;
@@ -49,7 +46,7 @@ public class PlayingField2 {
 
 
     public PlayingField2(int rows, int cols, String levelFile, int difficultyLevel) {
-        System.out.println(levelFile);
+        //System.out.println(levelFile);
         this.scoreManager = new ScoreManager();
         this.difficultyLevel = difficultyLevel;
         if(levelFile==null){
@@ -59,7 +56,6 @@ public class PlayingField2 {
             this.Field = new GameField(rows, cols, levelFile, difficultyLevel);
         }
         
-  
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         this.player_name = "p" + timeStamp;
     }
@@ -69,21 +65,21 @@ public class PlayingField2 {
         
         if(deltaRow==0 && deltaCol>0){
             int b=0;
-            for(int i=1;i<=deltaCol;i++){
+            for(int i=1;i<=deltaCol;i++){//ВПраво
                 traectpath.add(new Coordinate(x,y+i));
             }
         }
-        else if(deltaCol==0 && deltaRow>0){
+        else if(deltaCol==0 && deltaRow>0){//Вниз
             for(int i=1;i<=deltaRow;i++){
                 traectpath.add(new Coordinate(x+i,y));
             }
         }
-        else if(deltaRow<0 && deltaCol==0){
+        else if(deltaRow<0 && deltaCol==0){//Ввлево
             for(int i=-1;i>=deltaRow;i--){
                 traectpath.add(new Coordinate(x+i,y));
             }
         }
-        else if(deltaCol<0 && deltaRow==0){
+        else if(deltaCol<0 && deltaRow==0){//Вверх
             for(int i=-1;i>=deltaCol;i--){
                 traectpath.add(new Coordinate(x,y+i));
             }
@@ -94,7 +90,7 @@ public class PlayingField2 {
     }
 
     public void moveHero(int deltaRow, int deltaCol) {
-        System.out.println("move hero: deltaRow="+deltaRow+"   deltaCol="+deltaCol);
+        //System.out.println("move hero: deltaRow="+deltaRow+"   deltaCol="+deltaCol);
     
         if (Field.level == 4 && Field.moveCount >= Field.moveLimit) {
             System.out.println("Вы исчерпали лимит ходов для этого уровня!");
@@ -144,7 +140,7 @@ public class PlayingField2 {
     
 public void updateMonsters() {
     for (int i = 0; i < Field.monsters.size(); i++) {
-        System.out.println("Монстр 1 появился" + i);
+        //System.out.println("Монстр 1 появился" + i);
         MovableMonster monster = Field.monsters.get(i);
         if (monster.moveTowardsHero(Field.hero, Field.getGrid())) {
             if (!this.Field.sword || Field.swordCooldown>0) {
@@ -171,7 +167,7 @@ public void updateMonsters() {
                             JOptionPane.INFORMATION_MESSAGE
                         );
 
-                        // Попытка сбежать от монстра
+                        
                         int heroRow = Field.hero.getRow();
                         int heroCol = Field.hero.getCol();
 
@@ -226,7 +222,7 @@ public void updateMonsters() {
 
     
     for (int i = 0; i < Field.monsters2.size(); i++) {
-        System.out.println("Монстр 2 появился" + i);
+        //System.out.println("Монстр 2 появился" + i);
         MovableMonster monster2 = Field.monsters2.get(i);
         if (monster2.moveTowardsHero(Field.hero, Field.getGrid())) {
             if (!this.Field.sword || Field.swordCooldown>0) {
@@ -311,7 +307,7 @@ public void updateMonsters() {
 public void updateBoss() {
         Field.getGrid()[Field.boss.getRow()][Field.boss.getCol()] = '.'; 
 
-    System.out.println("Босс появился");
+    //System.out.println("Босс появился");
     if (Field.bossFreezeTurns > 0) {
         System.out.println("Босс заморожен! Осталось ходов: " + bossFreezeTurns);
         new MessageWindow("Босс заморожен! Осталось ходов:"+ bossFreezeTurns);
@@ -408,7 +404,7 @@ public void decrementCooldowns() {
     if (Field.elixirTurns > 0) {
         Field.elixirTurns--;
         if (Field.elixirTurns == 0) {
-            elecsir = false; 
+            Field.elecsir = false; 
             new MessageWindow("Действие эликсира закончилось!");
         }
     }
@@ -419,9 +415,9 @@ public void decrementCooldowns() {
         return row >= 0 && row < Field.getRows() && col >= 0 && col < Field.getCols(); 
     }
     public boolean checkForEvents(int row, int col) {
-        System.out.println("чек");
+        //System.out.println("чек");
         if (Field.getGrid()[row][col] == 'T') { 
-            System.out.println("вошел в сокровище");
+            //System.out.println("вошел в сокровище");
             new MessageWindow("Поздравляем! Вы нашли сокровище!");
             
             Field.getGrid()[row][col] = '.'; 
@@ -448,7 +444,7 @@ public void decrementCooldowns() {
                 return true; 
             }
             else if(Field.modelevel==3){
-                System.out.println("modelevel=" + Field.modelevel);
+                //System.out.println("modelevel=" + Field.modelevel);
                 new MessageWindow("Все уровни пройдены игра пройдена.");
                 System.exit(0); 
             }
@@ -476,8 +472,8 @@ public void decrementCooldowns() {
             }
             
         } else if (Field.getGrid()[row][col] == 'X') { 
-            System.out.println("вошел в чек "+row+" "+col); 
-            System.out.println("вошел в препятвие");
+            //System.out.println("вошел в чек "+row+" "+col); 
+            //System.out.println("вошел в препятвие");
             
             Field.coins++; 
             new MessageWindow("Вы разрушили препятствие и получили монету!");
@@ -489,12 +485,8 @@ public void decrementCooldowns() {
             
         } else if (Field.getGrid()[row][col] == 'S') { 
             System.out.println("вошел в меч");
-            
             new MessageWindow("Вы нашли меч, вы можете атаковать монстров!");
-            
             this.Field.sword = true;
-    
-          
            scoreManager.addOrUpdateScore(player_name, 0, 0,0,1,0,0); 
             
        } else if (Field.getGrid()[row][col] == 'E') { 
@@ -503,9 +495,7 @@ public void decrementCooldowns() {
            new MessageWindow("Вы выпили эликсир, дальность хода увеличена на 2 на 5 ходов!");
 
            this.Field.elecsir = true;
-           this.Field.elixirTurns = 5; // Устанавливаем количество ход
-           
-           this.Field.elecsir = true;
+           this.Field.elixirTurns += 5; 
     
        
            scoreManager.addOrUpdateScore(player_name, 0, 0,0,0,1,0);
@@ -529,7 +519,6 @@ public void decrementCooldowns() {
         if (Field.getGrid()[heroRow][heroCol] == 'T' || Field.getGrid()[heroRow][heroCol] == 'M' || Field.getGrid()[heroRow][heroCol] == 'N' ||Field.getGrid()[heroRow][heroCol] == 'B' || Field.getGrid()[heroRow][heroCol] == 'S' || Field.getGrid()[heroRow][heroCol] == 'E' || Field.getGrid()[heroRow][heroCol] == 'X' || Field.getGrid()[heroRow][heroCol] == 'K') {
             System.out.println("heroRow"+heroRow+"heroCol"+heroCol);
             checkForEvents(heroRow, heroCol);
-            // Проверяем события на текущей позиции
             return true; 
         }
         

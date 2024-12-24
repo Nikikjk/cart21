@@ -4,14 +4,11 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
 import java.util.Random;
 
 import View.MessageWindow;
-import View.ScoreManager;
 
 public class GameField {
     public int moveCount;//количесво ходов
@@ -37,8 +34,6 @@ public class GameField {
     public int cristal;
     private String filename;
     private static final int MAX_MOVE_LIMIT = 30; // 
-    private static final int TARGET_ROW = 10; // 
-    private static final int TARGET_COL = 10; // 
 
     public boolean isCustomLevel(String levelFile) {
         if(levelFile==null){
@@ -55,7 +50,7 @@ public class GameField {
     
 
     public GameField(int rows, int cols, String levelFile,int difficultyLevel) {
-        System.out.println("Сборка");
+        //System.out.println("Сборка");
         this.difficultyLevel = difficultyLevel;
         this.moveCount = 0;
         this.cristal = 0;
@@ -152,7 +147,7 @@ public class GameField {
     
                 Monster monster = new Monster(row, col);
                 monsters.add(monster);
-                grid[row][col] = 'M'; // 'M' монстр
+                grid[row][col] = 'M'; 
             }
         }
         else if(difficultyLevel==2){
@@ -165,7 +160,7 @@ public class GameField {
     
                 Monster monster = new Monster(row, col);
                 monsters.add(monster);
-                grid[row][col] = 'M'; // 'M' монстр
+                grid[row][col] = 'M'; 
             }
         }
         else if(difficultyLevel==3){
@@ -178,7 +173,7 @@ public class GameField {
     
                 Monster monster = new Monster(row, col);
                 monsters.add(monster);
-                grid[row][col] = 'M'; // 'M' монстр
+                grid[row][col] = 'M'; 
             }
         }
         
@@ -196,7 +191,7 @@ public class GameField {
     
                 Monster2 monster2 = new Monster2(row, col);
                 monsters2.add(monster2);
-                grid[row][col] = 'N'; // 'M' монстр
+                grid[row][col] = 'N'; 
             }
         }
         else if(difficultyLevel==2){
@@ -209,7 +204,7 @@ public class GameField {
     
                 Monster2 monster2 = new Monster2(row, col);
                 monsters2.add(monster2);
-                grid[row][col] = 'N'; // 'M' монстр
+                grid[row][col] = 'N'; 
             }
         }
         else if(difficultyLevel==3){
@@ -222,7 +217,7 @@ public class GameField {
     
                 Monster2 monster2 = new Monster2(row, col);
                 monsters2.add(monster2);
-                grid[row][col] = 'N'; // 'M' монстр
+                grid[row][col] = 'N'; 
             }
         }
     }
@@ -237,7 +232,7 @@ public class GameField {
             } while (grid[row][col] != 'X'); 
     
             boss = new Boss(row, col);
-            grid[row][col] = 'B'; // 'B' Босс
+            grid[row][col] = 'B'; 
             }
     }
         
@@ -245,40 +240,40 @@ public class GameField {
  
     public void placesword() {
         Random rand = new Random();
-        for (int i = 0; i < 4; i++) { // Например, 30 препятствий
+        for (int i = 0; i < 4; i++) { 
             int row, col;
             do {
                 row = rand.nextInt(rows);
                 col = rand.nextInt(cols);
             } while (grid[row][col] != 'X'); 
 
-            grid[row][col] = 'S'; // 'X'  препятствие
+            grid[row][col] = 'S'; 
         }
     }
 
     public void placecristal() {
         Random rand = new Random();
-        for (int i = 0; i < 4; i++) { // Например, 30 препятствий
+        for (int i = 0; i < 4; i++) { 
             int row, col;
             do {
                 row = rand.nextInt(rows);
                 col = rand.nextInt(cols);
             } while (grid[row][col] != 'X'); 
 
-            grid[row][col] = 'K'; // 'X'  препятствие
+            grid[row][col] = 'K'; 
         }
     }
 
     public void placeelecsir() {
         Random rand = new Random();
-        for (int i = 0; i < 3; i++) { // Например, 30 препятствий
+        for (int i = 0; i < 3; i++) { 
             int row, col;
             do {
                 row = rand.nextInt(rows);
                 col = rand.nextInt(cols);
             } while (grid[row][col] != 'X'); 
 
-            grid[row][col] = 'E'; // 'E'  элексир
+            grid[row][col] = 'E'; 
         }
     }
 
@@ -292,10 +287,7 @@ public class GameField {
         this.monsters = new ArrayList<>();
         this.monsters2 = new ArrayList<>();
         this.boss = null;
-        //grid[hero.getRow()][hero.getCol()] = 'H';
-        
         initializeGrid(difficultyLevel); 
-        //grid[0][0]='X';
         if(level==4){
             moveLimit=MAX_MOVE_LIMIT;
         }
@@ -318,7 +310,7 @@ public class GameField {
         this.boss = null;
         if((level>5 || difficultyLevel>3)){
             new MessageWindow("Все уровни пройдены игра пройдена.");
-            System.exit(0); // Завершение игры
+            System.exit(0); 
         }
         this.filename="levels/level"+level+"dif"+difficultyLevel+".txt";
         loadCompanyLevel(this.filename);
@@ -517,7 +509,7 @@ public class GameField {
     } 
 
     public boolean getElecsir() {
-        return elecsir; // Returns true if the elixir has been collected
+        return elecsir; 
     }
 
     public int getElixirTurns() {

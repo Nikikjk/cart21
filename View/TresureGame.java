@@ -102,7 +102,7 @@ public class TresureGame extends JPanel {
             @Override
             public void keyPressed(KeyEvent e) {
                 int key = e.getKeyCode();
-                System.out.println("Движение");
+                //System.out.println("Движение");
 
                 
                 switch (key) {

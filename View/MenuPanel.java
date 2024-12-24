@@ -21,14 +21,14 @@ public class MenuPanel extends JPanel {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS)); 
         createButtons(game);
         setPreferredSize(new Dimension(background.getWidth(), background.getHeight()));
-        revalidate(); // Обновляем панель
-        repaint(); // Перерисовываем панель
+        revalidate(); 
+        repaint(); 
 
     }
 
     private void loadBackgroundImage() {
         try {
-            background = ImageIO.read(new File("Textures/MenuBackground.png")); // Загрузка изображения фона
+            background = ImageIO.read(new File("Textures/MenuBackground.png")); 
             System.out.println("Фон загружен успешно."+background);
         } catch (Exception e) {
             System.err.println("Ошибка загрузки фонового изображения: " + e.getMessage());
@@ -42,12 +42,12 @@ public class MenuPanel extends JPanel {
             playButtonSound(); 
             startGame(game);
         });
-        startButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Центрирование по горизонтали
+        startButton.setAlignmentX(Component.CENTER_ALIGNMENT); 
         add(startButton);
         add(Box.createRigidArea(new Dimension(0, 10))); 
     
         JButton difficultyButton = createDifficultyButton(game);
-        difficultyButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Центрирование по горизонтали
+        difficultyButton.setAlignmentX(Component.CENTER_ALIGNMENT); 
         add(difficultyButton);
         add(Box.createRigidArea(new Dimension(0, 10))); 
     
@@ -55,7 +55,7 @@ public class MenuPanel extends JPanel {
             playButtonSound(); 
             game.startRandomGame(difficultyLevel);
         });
-        randomLevelButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Центрирование по горизонтали
+        randomLevelButton.setAlignmentX(Component.CENTER_ALIGNMENT); 
         add(randomLevelButton);
         add(Box.createRigidArea(new Dimension(0, 10))); 
     
@@ -63,7 +63,7 @@ public class MenuPanel extends JPanel {
             playButtonSound(); 
             System.exit(0);
         });
-        exitButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Центрирование по горизонтали
+        exitButton.setAlignmentX(Component.CENTER_ALIGNMENT); 
         add(exitButton);
         add(Box.createRigidArea(new Dimension(0, 10))); 
     
@@ -71,7 +71,7 @@ public class MenuPanel extends JPanel {
             playButtonSound(); 
             showLeaderboard(game);
         });
-        leaderboardButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Центрирование по горизонтали
+        leaderboardButton.setAlignmentX(Component.CENTER_ALIGNMENT); 
         add(leaderboardButton);
         add(Box.createRigidArea(new Dimension(0, 10))); 
     
@@ -79,12 +79,12 @@ public class MenuPanel extends JPanel {
             playButtonSound(); 
             openLevelEditor(game);
         });
-        levelEditorButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Центрирование по горизонтали
+        levelEditorButton.setAlignmentX(Component.CENTER_ALIGNMENT); 
         add(levelEditorButton);
         add(Box.createRigidArea(new Dimension(0, 10))); 
     
         JButton customLevelButton = createCustomLevelButton(game);
-        customLevelButton.setAlignmentX(Component.CENTER_ALIGNMENT); // Центрирование по горизонтали
+        customLevelButton.setAlignmentX(Component.CENTER_ALIGNMENT); 
         add(customLevelButton);
     
         add(Box.createVerticalGlue());
