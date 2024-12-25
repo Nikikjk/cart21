@@ -80,9 +80,9 @@ public class TreasureHuntGame extends JFrame {
     public static void main(String[] args) {
         System.out.println("Старт");
         if(args.length>0){
-            TestUpdateMonsters.TestUpdateMonsters();
-            TestMoveHero.TestMoveHero();
-            TestUpdateBoss.TestUpdateBoss();
+            //TestUpdateMonsters.TestUpdateMonsters();
+            //TestMoveHero.TestMoveHero();
+            //TestUpdateBoss.TestUpdateBoss();
         }
         else{
             SwingUtilities.invokeLater(TreasureHuntGame::new);

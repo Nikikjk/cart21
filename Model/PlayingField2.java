@@ -249,7 +249,7 @@ public void updateMonsters() {
                             JOptionPane.INFORMATION_MESSAGE
                         );
 
-                        // Попытка сбежать от монстра
+                        
                         int heroRow = Field.hero.getRow();
                         int heroCol = Field.hero.getCol();
 

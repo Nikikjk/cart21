@@ -1330,5 +1330,185 @@
         "coins": 91,
         "monsters": 5,
         "treasures": 0
+    },
+    {
+        "score": 18,
+        "sword": 0,
+        "elixir": 2,
+        "playerName": "p20241224_194752",
+        "coins": 18,
+        "monsters": 0,
+        "treasures": 0
+    },
+    {
+        "score": 10,
+        "sword": 0,
+        "elixir": 0,
+        "playerName": "p20241224_195026",
+        "coins": 10,
+        "monsters": 0,
+        "treasures": 1
+    },
+    {
+        "score": 1,
+        "sword": 0,
+        "elixir": 0,
+        "playerName": "p20241224_200109",
+        "coins": 1,
+        "monsters": 0,
+        "treasures": 0
+    },
+    {
+        "score": 65,
+        "sword": 1,
+        "elixir": 1,
+        "playerName": "p20241224_200153",
+        "coins": 65,
+        "monsters": 2,
+        "treasures": 1
+    },
+    {
+        "score": 41,
+        "sword": 1,
+        "elixir": 1,
+        "playerName": "p20241224_200335",
+        "coins": 41,
+        "monsters": 2,
+        "treasures": 0
+    },
+    {
+        "score": 149,
+        "sword": 1,
+        "elixir": 0,
+        "playerName": "p20241224_200420",
+        "coins": 149,
+        "monsters": 5,
+        "treasures": 3
+    },
+    {
+        "score": 0,
+        "sword": 1,
+        "elixir": 0,
+        "playerName": "p20241224_205747",
+        "coins": 0,
+        "monsters": 0,
+        "treasures": 0
+    },
+    {
+        "score": 0,
+        "sword": 0,
+        "elixir": 1,
+        "playerName": "p20241224_210024",
+        "coins": 0,
+        "monsters": 0,
+        "treasures": 0
+    },
+    {
+        "score": 0,
+        "sword": 0,
+        "elixir": 1,
+        "playerName": "p20241224_211631",
+        "coins": 0,
+        "monsters": 0,
+        "treasures": 0
+    },
+    {
+        "score": 0,
+        "sword": 0,
+        "elixir": 1,
+        "playerName": "p20241224_211653",
+        "coins": 0,
+        "monsters": 0,
+        "treasures": 0
+    },
+    {
+        "score": 0,
+        "sword": 1,
+        "elixir": 0,
+        "playerName": "p20241224_211812",
+        "coins": 0,
+        "monsters": 0,
+        "treasures": 0
+    },
+    {
+        "score": 10,
+        "sword": 0,
+        "elixir": 0,
+        "playerName": "p20241224_220932",
+        "coins": 10,
+        "monsters": 0,
+        "treasures": 1
+    },
+    {
+        "score": 10,
+        "sword": 0,
+        "elixir": 0,
+        "playerName": "p20241224_221001",
+        "coins": 10,
+        "monsters": 0,
+        "treasures": 1
+    },
+    {
+        "score": 10,
+        "sword": 0,
+        "elixir": 0,
+        "playerName": "p20241224_221013",
+        "coins": 10,
+        "monsters": 0,
+        "treasures": 1
+    },
+    {
+        "score": 15,
+        "sword": 0,
+        "elixir": 0,
+        "playerName": "p20241225_002700",
+        "coins": 15,
+        "monsters": 0,
+        "treasures": 0
+    },
+    {
+        "score": 1,
+        "sword": 0,
+        "elixir": 0,
+        "playerName": "p20241225_003127",
+        "coins": 1,
+        "monsters": 0,
+        "treasures": 0
+    },
+    {
+        "score": 1,
+        "sword": 0,
+        "elixir": 0,
+        "playerName": "p20241225_003136",
+        "coins": 1,
+        "monsters": 0,
+        "treasures": 0
+    },
+    {
+        "score": 4,
+        "sword": 0,
+        "elixir": 0,
+        "playerName": "p20241225_003152",
+        "coins": 4,
+        "monsters": 0,
+        "treasures": 0
+    },
+    {
+        "score": 4,
+        "sword": 0,
+        "elixir": 0,
+        "playerName": "p20241225_003301",
+        "coins": 4,
+        "monsters": 0,
+        "treasures": 0
+    },
+    {
+        "score": 2,
+        "sword": 0,
+        "elixir": 0,
+        "playerName": "p20241225_003402",
+        "coins": 2,
+        "monsters": 0,
+        "treasures": 0
     }
 ]
