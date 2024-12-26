@@ -38,7 +38,7 @@ public class PlayingField2 {
         }
     }
 
-    public PlayingField2(int rows, int cols,int difficultyLevel ) {
+    public PlayingField2(int rows, int cols,int difficultyLevel) {
         this(rows, cols, null ,difficultyLevel );
         this.Field.modelevel=1;
          
@@ -449,7 +449,7 @@ public void decrementCooldowns() {
                 System.exit(0); 
             }
             
-        } else if (Field.getGrid()[row][col] == 'M' || Field.getGrid()[row][col] == 'N' || Field.getGrid()[row][col] == 'B' ) { // Monster encountered
+        } else if (Field.getGrid()[row][col] == 'M' || Field.getGrid()[row][col] == 'N' || Field.getGrid()[row][col] == 'B' ) { 
             if (!this.sword) { 
                 if (this.coins < 5 || this.coins < 0) { 
                     new MessageWindow("Вы встретили монстра! Игра окончена.");
@@ -460,7 +460,7 @@ public void decrementCooldowns() {
                 this.Field.coins -= 5;
     
                 
-                scoreManager.addOrUpdateScore(player_name, -5, -5,0,0,0,0); // Example usage
+                scoreManager.addOrUpdateScore(player_name, -5, -5,0,0,0,0); 
                 
             } else { 
                 Field.coins += 5; 
